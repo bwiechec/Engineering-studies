@@ -1,0 +1,14 @@
+body{
+    background-size:100% 100%;
+}
+.container {
+    position: relative;
+	margin-top: 70px;
+	margin-left: auto;
+    margin-right: auto;
+}
+#ProjHeader {
+    color: white;
+	font-weight: bold;
+	font-style: oblique;
+}
