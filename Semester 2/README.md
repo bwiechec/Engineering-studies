@@ -1,2 +1,2 @@
-# Semester 1
-Projects created during first semester at Poznan University of Technology
+# Semester 2
+Projects created during second semester at Poznan University of Technology
