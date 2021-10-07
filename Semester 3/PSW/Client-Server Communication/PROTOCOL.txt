@@ -1,0 +1,18 @@
+                    OPIS PROTOKOŁU KOMUNIKACJI
+Do każdego działania przypisałem 3 cyfrowy kod odpowiadający wykonywanej czynności. 
+1. Obsługa konta użytkownika
+    -Logowanie: kod 123
+    -Wylogowanie: kod 321
+    -Podgląd listy zalogowanych użytkowników: 2311
+    -Podgląd listy użytkowników zapisanych do danej grupy tematycznej: kod 2312
+2. Obsługa grup tematycznych
+    -Zapis do grupy: kod 111
+    -Wypisanie się z grupy: kod 222
+    -Lista dostępnych grup: kod 333
+3. Wiadomości
+    -Odbiór wiadomości: kod 456
+    -Wysłanie wiadmości do grupy: kod 654
+    -Wysłanie wiadmości do użytkownika: kod 564
+4. Odpowiedź serwera: kod 999
+
+Wszystkie kody oprócz kodu odpowiedzi serwera podane są w osobnej zmiennej typWiadomosci, a kod odpowiedzi serwera jest podany jako typ wysyłanej wiadomości mtype.

@@ -1,0 +1,5 @@
+#!/bin/bash
+#skrypt do kompilacji projektu
+
+gcc -Wall inf141334_s.c -o ./s
+gcc -Wall inf141334_k.c -o ./k
