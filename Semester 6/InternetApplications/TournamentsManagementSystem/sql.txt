@@ -1,0 +1,46 @@
+---UZYTKOWNIK---
+
+CREATE TABLE `turnieje`.`user` ( `id_user` INT NOT NULL AUTO_INCREMENT , `name` TEXT NOT NULL , `nazwisko` TEXT NOT NULL , `email` TEXT NOT NULL UNIQUE, `password` TEXT NOT NULL , `reg_status` BOOLEAN NOT NULL , PRIMARY KEY (`id_user`))
+
+
+---TURNIEJ---
+
+CREATE TABLE `turnieje`.`tournament` ( `id_tournament` INT NOT NULL AUTO_INCREMENT , `id_creator` INT NOT NULL , `name` TEXT NOT NULL , `discipline` TEXT NOT NULL , `time` DATE NOT NULL , `location` TEXT NOT NULL , `limitation` INT NOT NULL , `deadline` DATE NOT NULL , `ladder` BOOLEAN NOT NULL, PRIMARY KEY (`id_tournament`));
+
+ALTER TABLE `tournament`
+	ADD CONSTRAINT tournamentFK
+    	FOREIGN KEY(`id_creator`) 
+    	REFERENCES user(`id_user`);
+
+---USR_TOURNAMENT---
+
+CREATE TABLE `turnieje`.`user_tournament` ( `id_tournament` INT NOT NULL UNIQUE, `id_user` INT NOT NULL UNIQUE, `player_license_number` INT NOT NULL , `rank` INT NOT NULL ) ;
+
+ALTER TABLE `user_tournament`
+	ADD CONSTRAINT usr_tournamentFK1
+    	FOREIGN KEY(`id_user`) 
+    	REFERENCES user(`id_user`);
+        
+ALTER TABLE `user_tournament`
+	ADD CONSTRAINT usr_tournamentFK2
+    	FOREIGN KEY(`id_tournament`) 
+    	REFERENCES tournament(`id_tournament`);
+
+---MATCH---
+
+CREATE TABLE `turnieje`.`matches` ( `id_match` INT NOT NULL AUTO_INCREMENT , `id_tournament` INT NOT NULL , `id_user1` INT NULL , `id_user2` INT NULL , `round` INT NOT NULL , `winner1` INT NULL , `winner2` INT NULL , `winner` INT NULL , `deadline` DATE NOT NULL , `matchNr` INT NOT NULL , PRIMARY KEY (`id_match`));
+
+ALTER TABLE `matches`
+	ADD CONSTRAINT matchFK1
+    	FOREIGN KEY(`id_tournament`) 
+    	REFERENCES tournament(`id_tournament`);
+        
+ALTER TABLE `matches`
+	ADD CONSTRAINT matchFK2
+    	FOREIGN KEY(`id_user1`) 
+    	REFERENCES user(`id_user`);
+
+ALTER TABLE `matches`
+	ADD CONSTRAINT matchFK3
+    	FOREIGN KEY(`id_user2`) 
+    	REFERENCES user(`id_user`);

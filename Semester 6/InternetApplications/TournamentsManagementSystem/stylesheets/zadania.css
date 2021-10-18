@@ -1,0 +1,11 @@
+body{
+    background-size:100% 100%;
+}
+.container {
+    margin-bottom: 5%;
+}
+#IEheader {
+    color: white;
+	font-weight: bold;
+	font-style: oblique;
+}

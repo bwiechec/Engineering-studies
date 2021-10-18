@@ -1,0 +1,16 @@
+body{
+    background-size:100% 100%;
+}
+.container {
+    position: relative;
+	margin-top: 7%;
+	margin-left: 40%;
+}
+#IEheader {
+    color: white;
+	font-weight: bold;
+	font-style: oblique;
+}
+#signUp a {
+    color: orange;
+}
